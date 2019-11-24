@@ -48,6 +48,7 @@ namespace Forum
                     template: "{controller=Theme}/{action=List}/{id?}"
                 );
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
