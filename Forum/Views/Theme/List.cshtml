@@ -2,7 +2,5 @@
 
 @foreach (var t in Model)
 {
-    <div>
-        <h3>@t.Name</h3>
-    </div>
+    @Html.Partial("ThemeSummary", t)
 }

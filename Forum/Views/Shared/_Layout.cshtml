@@ -3,11 +3,17 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <title>My Forum</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="navbar navbar-dark bg-dark" role="navigation">
+        <a class="col navbar-brand" href="#">ТЕСТОВЫЙ ФОРУМ</a>
+    </div>
+    <div class="row m-1 p-1">
+        <div class="col">
+            @RenderBody()
+        </div>
     </div>
 </body>
 </html>
