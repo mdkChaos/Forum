@@ -9,9 +9,12 @@
     <script src="~/lib/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <title>My Forum</title>
 </head>
-<body>
+<body class="m-1 p-1">
     <div class="navbar navbar-dark bg-dark" role="navigation">
         <a class="col navbar-brand" asp-action="List" asp-controller="Theme">ТЕСТОВЫЙ ФОРУМ</a>
+        <div class="col-2">
+            <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Выход</a>
+        </div>
     </div>
     <div class="row m-1 p-1">
         <div class="col">
