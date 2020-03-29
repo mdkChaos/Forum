@@ -20,11 +20,9 @@ namespace Forum
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration["Data:Forum:ConnectionString"]));
-            /*services.AddDbContext<AppIdentityDbContext>(options =>
-                options.UseSqlServer(Configuration["Data:ForumIdentity:ConnectionString"]));
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>()
-                .AddDefaultTokenProviders();*/
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
             services.AddTransient<IThemeRepository, EFThemeRepository>();
             services.AddMvc();
         }
@@ -40,7 +38,7 @@ namespace Forum
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            // app.UseAuthentication();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

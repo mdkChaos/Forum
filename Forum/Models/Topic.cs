@@ -9,7 +9,7 @@ namespace Forum.Models
         public string Title { get; set; }
         public string Body { get; set; }
         public DateTime Time { get; set; }
-        public Theme ThemeId { get; set; }
-        public IdentityUser UserId { get; set; }
+        public Theme Theme { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

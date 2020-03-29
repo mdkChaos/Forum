@@ -6,9 +6,9 @@ namespace Forum.Models
     public class Answer
     {
         public int AnswerId { get; set; }
-        public Topic TopicId { get; set; }
+        public Topic Topic { get; set; }
         public string Body { get; set; }
         public DateTime Time { get; set; }
-        public IdentityUser UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
