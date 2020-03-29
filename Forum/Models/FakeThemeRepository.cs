@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Forum.Models
 {
-    public class FakeThemeRepository : IThemeRepository
+    public class FakeThemeRepository// : IThemeRepository
     {
         public IQueryable<Theme> Themes => new List<Theme>
         {

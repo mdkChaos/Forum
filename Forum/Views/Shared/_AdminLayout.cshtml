@@ -4,6 +4,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" asp-href-include="lib/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/node_modules/jquery/jquery.min.js"></script>
+    <script src="~/lib/node_modules/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <title>My Forum</title>
 </head>
 <body>
@@ -12,6 +15,10 @@
     </div>
     <div class="row m-1 p-1">
         <div class="col">
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-success">@TempData["message"]</div>
+            }
             @RenderBody()
         </div>
     </div>

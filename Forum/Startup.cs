@@ -48,8 +48,10 @@ namespace Forum
                    defaults: new { controller = "Theme", action = "ListTopics", themeId = 1 });
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Theme}/{action=List}/{id?}"
-                );
+                    template: "{controller=Theme}/{action=List}/{id?}");
+                //routes.MapRoute(
+                //    name: null,
+                //    template: "{controller}/{action}/{id?}");
             });
             SeedData.EnsurePopulated(app);
         }
