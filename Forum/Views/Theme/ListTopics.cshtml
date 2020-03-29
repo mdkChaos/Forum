@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Topic>
+
+@foreach (var t in Model)
+{
+    @Html.Partial("TopicSummary", t)
+}

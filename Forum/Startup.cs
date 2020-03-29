@@ -24,6 +24,7 @@ namespace Forum
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddTransient<IThemeRepository, EFThemeRepository>();
+            services.AddTransient<ITopicRepository, EFTopicRepository>();
             services.AddMvc();
         }
 
@@ -41,6 +42,10 @@ namespace Forum
             app.UseAuthentication();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                   name: null,
+                   template: "Theme{themeId:int}",
+                   defaults: new { controller = "Theme", action = "ListTopics", themeId = 1 });
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Theme}/{action=List}/{id?}"

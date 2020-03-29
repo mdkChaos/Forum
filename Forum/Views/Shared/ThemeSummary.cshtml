@@ -2,6 +2,9 @@
 
 <div class="card border-primary m-1 p-1">
     <div class="bg-light p-1">
-        <h4>@Model.Name</h4>
+        <a class="btn btn-block"
+           asp-action="ListTopics"
+           asp-controller="Theme"
+           asp-route-themeId ="@Model.ThemeId">@Model.Name</a>
     </div>
 </div>

@@ -3,13 +3,15 @@ using System.Linq;
 
 namespace Forum.Models
 {
-    public class EFThemeRepository : IThemeRepository
+    public class EFTopicRepository : ITopicRepository
     {
         private ApplicationDbContext context;
-        public EFThemeRepository(ApplicationDbContext context)
+
+        public EFTopicRepository(ApplicationDbContext context)
         {
             this.context = context;
         }
-        public IQueryable<Theme> Themes => context.Themes;
+
+        public IQueryable<Topic> Topics => context.Topics;
     }
 }
